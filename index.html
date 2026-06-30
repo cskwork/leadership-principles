@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>원칙 · 내가 이끄는 방식</title>
+<meta name="description" content="결정이 어려울 때 다시 펴 보는 열다섯 개의 리더십 기준. 매일 하나씩, 결정 앞에서 다시." />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239A4526'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FBF9F4'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendard-variable.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Noto+Serif+KR:wght@500;600;700&display=swap" />
+
+<style>
+:root{
+  --canvas:#F4F1EA;
+  --raised:#FBF9F4;
+  --ink:#2A2722;
+  --ink-strong:#1C1A15;
+  --muted:#655F53;
+  --accent:#9A4526;
+  --on-accent:#FBF9F4;
+  --hairline:#E3DDCF;
+  --hairline-soft:#ECE7DA;
+  --shadow:0 1px 2px rgba(40,36,28,.05), 0 10px 30px rgba(40,36,28,.07);
+  --shadow-soft:0 1px 2px rgba(40,36,28,.04);
+  --font-display:"Newsreader","Noto Serif KR",Georgia,serif;
+  --font-body:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --r-card:14px;
+  --r-pill:999px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --wrap:min(1180px,92vw);
+}
+[data-theme="dark"]{
+  --canvas:#17150F;
+  --raised:#211E16;
+  --ink:#ECE6D8;
+  --ink-strong:#F4EFE3;
+  --muted:#A8A091;
+  --accent:#E0936A;
+  --on-accent:#17150F;
+  --hairline:#34302A;
+  --hairline-soft:#2A271F;
+  --shadow:0 1px 2px rgba(8,6,3,.4), 0 14px 34px rgba(8,6,3,.45);
+  --shadow-soft:0 1px 2px rgba(8,6,3,.35);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html[lang="ko"] body{word-break:keep-all}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  background:var(--canvas);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  min-height:100dvh;
+  transition:background .5s var(--ease), color .5s var(--ease);
+}
+::selection{background:var(--accent);color:var(--on-accent)}
+
+a{color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--accent);color:var(--on-accent);padding:10px 16px;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+
+.wrap{width:var(--wrap);margin-inline:auto}
+
+/* ---- header ---- */
+.top{
+  position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb, var(--canvas) 86%, transparent);
+  backdrop-filter:saturate(140%) blur(12px);
+  -webkit-backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid var(--hairline-soft);
+}
+.top-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand .mark{font-family:var(--font-display);font-weight:600;font-size:1.45rem;color:var(--ink-strong);letter-spacing:-.01em}
+.brand .mark em{font-style:italic;color:var(--accent)}
+.brand .tag{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.controls{display:flex;align-items:center;gap:6px}
+.ctl{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:40px;padding:0 13px;border-radius:var(--r-pill);
+  border:1px solid var(--hairline);color:var(--ink);
+  font-size:.86rem;font-weight:500;
+  transition:border-color .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+}
+.ctl.icon{width:40px;padding:0}
+.ctl:hover{border-color:var(--accent);color:var(--accent)}
+.ctl svg{width:18px;height:18px;display:block}
+.lang-now{font-variant-numeric:tabular-nums}
+
+/* ---- hero ---- */
+.hero{padding:clamp(56px,9vw,104px) 0 clamp(28px,4vw,44px)}
+.eyebrow{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:22px}
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(2.6rem,7vw,5rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  color:var(--ink-strong);
+  max-width:16ch;
+}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{
+  margin-top:26px;
+  font-size:clamp(1.05rem,2vw,1.32rem);
+  line-height:1.6;
+  color:var(--muted);
+  max-width:42ch;
+}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px}
+.hero .meta span{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;color:var(--muted)}
+.hero .meta b{font-family:var(--font-display);font-size:1.15rem;color:var(--ink-strong);font-weight:600;font-variant-numeric:tabular-nums}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+
+/* ---- today feature ---- */
+.today{padding:8px 0 clamp(48px,7vw,80px)}
+.today-card{
+  position:relative;
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,52px);align-items:center;
+  background:var(--raised);
+  border:1px solid var(--hairline);
+  border-radius:calc(var(--r-card) + 6px);
+  padding:clamp(26px,4vw,46px);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.today-card::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--accent);
+}
+.today-num{
+  font-family:var(--font-display);font-style:italic;font-weight:400;
+  font-size:clamp(4.5rem,13vw,9rem);line-height:.8;color:var(--accent);
+  font-variant-numeric:tabular-nums;opacity:.92;
+}
+.today-body .kicker{display:flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:14px}
+.today-body h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.12;color:var(--ink-strong);letter-spacing:-.01em}
+.today-body .en{font-family:var(--font-display);font-style:italic;color:var(--accent);font-size:clamp(1rem,1.8vw,1.2rem);margin-top:6px}
+.today-body p{margin-top:16px;color:var(--ink);max-width:52ch;font-size:1.05rem}
+.today-body .read{margin-top:22px;display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 22px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:.95rem;transition:transform .3s var(--ease), filter .3s var(--ease)}
+.today-body .read:hover{filter:brightness(1.06)}
+.today-body .read svg{width:18px;height:18px}
+
+/* ---- list section ---- */
+.list-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:30px;border-bottom:1px solid var(--hairline);margin-bottom:38px}
+.list-head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--ink-strong);letter-spacing:-.01em}
+.list-head h2 .count{color:var(--accent);font-style:italic}
+.search{position:relative;min-width:min(320px,80vw)}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
+.search input{
+  width:100%;height:50px;padding:0 18px 0 46px;border-radius:var(--r-pill);
+  background:var(--raised);border:1px solid var(--hairline);color:var(--ink);
+  font-family:inherit;font-size:.96rem;transition:border-color .3s var(--ease)}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:none;border-color:var(--accent)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.card{
+  position:relative;text-align:left;width:100%;
+  background:var(--raised);border:1px solid var(--hairline);border-radius:var(--r-card);
+  padding:26px 26px 28px;box-shadow:var(--shadow-soft);
+  display:flex;flex-direction:column;gap:8px;
+  transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+.card .row{display:flex;align-items:baseline;gap:14px}
+.card .n{font-family:var(--font-display);font-style:italic;font-size:1.5rem;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1;min-width:1.6em}
+.card h3{font-family:var(--font-display);font-weight:600;font-size:1.34rem;color:var(--ink-strong);line-height:1.18;letter-spacing:-.01em}
+.card .en{font-family:var(--font-display);font-style:italic;color:var(--muted);font-size:.95rem;margin-left:calc(1.6em + 14px)}
+.card p{color:var(--ink);font-size:.99rem;line-height:1.55;margin-top:6px}
+.card .more{margin-top:auto;padding-top:14px;display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:.85rem;font-weight:600;opacity:0;transform:translateX(-4px);transition:opacity .3s var(--ease), transform .3s var(--ease)}
+.card:hover .more,.card:focus-visible .more{opacity:1;transform:none}
+.card .more svg{width:15px;height:15px}
+
+.empty{display:none;text-align:center;padding:64px 20px;color:var(--muted)}
+.empty.show{display:block}
+.empty h3{font-family:var(--font-display);font-size:1.5rem;color:var(--ink-strong);margin-bottom:8px}
+
+/* ---- reveal ---- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+  .card,.today-body .read,body{transition:none !important}
+}
+
+/* ---- dialog ---- */
+dialog{
+  width:min(640px,92vw);max-height:90dvh;padding:0;border:none;border-radius:calc(var(--r-card) + 4px);
+  background:var(--raised);color:var(--ink);box-shadow:var(--shadow);overflow:hidden;
+}
+dialog::backdrop{background:rgba(28,26,21,.52);backdrop-filter:blur(3px)}
+[data-theme="dark"] dialog::backdrop{background:rgba(6,5,2,.66)}
+.d-in{padding:clamp(28px,4vw,44px);overflow-y:auto;max-height:90dvh}
+.d-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.d-num{font-family:var(--font-display);font-style:italic;font-size:clamp(3rem,9vw,5rem);line-height:.8;color:var(--accent);font-variant-numeric:tabular-nums}
+.d-close{flex:none;width:42px;height:42px;border-radius:var(--r-pill);border:1px solid var(--hairline);display:inline-flex;align-items:center;justify-content:center;transition:border-color .3s var(--ease),color .3s var(--ease)}
+.d-close:hover{border-color:var(--accent);color:var(--accent)}
+.d-close svg{width:19px;height:19px}
+.d-title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.12;color:var(--ink-strong);letter-spacing:-.01em;margin-top:18px}
+.d-en{font-family:var(--font-display);font-style:italic;color:var(--accent);font-size:1.1rem;margin-top:6px}
+.d-body{margin-top:20px;font-size:1.06rem;line-height:1.7;color:var(--ink)}
+.d-practice{margin-top:26px;border-top:1px solid var(--hairline);padding-top:22px}
+.d-practice .lbl{display:flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:14px}
+.d-practice ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.d-practice li{position:relative;padding-left:26px;color:var(--ink);font-size:1rem;line-height:1.55}
+.d-practice li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+.d-nav{display:flex;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--hairline)}
+.d-nav button{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:var(--r-pill);border:1px solid var(--hairline);color:var(--ink);font-weight:500;font-size:.9rem;transition:border-color .3s var(--ease),color .3s var(--ease)}
+.d-nav button:hover{border-color:var(--accent);color:var(--accent)}
+.d-nav button svg{width:16px;height:16px}
+.d-nav .nx{margin-left:auto}
+
+/* ---- footer ---- */
+footer{margin-top:clamp(60px,9vw,110px);border-top:1px solid var(--hairline);padding:46px 0 60px}
+footer .f-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+footer .creed{font-family:var(--font-display);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--ink-strong);max-width:30ch;line-height:1.3}
+footer .note{font-size:.82rem;color:var(--muted);text-align:right}
+
+@media (max-width:680px){
+  body{font-size:16px}
+  .top-in{height:60px}
+  .brand .tag{display:none}
+  .today-card{grid-template-columns:1fr;gap:14px}
+  .today-num{font-size:clamp(3.6rem,22vw,5rem)}
+  .grid{grid-template-columns:1fr}
+  .list-head{align-items:stretch}
+  .search{min-width:0;width:100%}
+  footer .f-in{flex-direction:column;align-items:flex-start}
+  footer .note{text-align:left}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#principles" data-i18n="skip">본문 바로가기</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="원칙, 처음으로">
+      <span class="mark"><em>원</em>칙</span>
+      <span class="tag" data-i18n="tag">Principles I Lead By</span>
+    </a>
+    <div class="controls">
+      <button class="ctl icon" id="searchBtn" aria-label="원칙 검색" title="검색">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button class="ctl" id="langBtn" aria-label="Switch language">
+        <span class="lang-now" id="langNow">EN</span>
+      </button>
+      <button class="ctl icon" id="themeBtn" aria-label="테마 전환" title="라이트/다크">
+        <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow" data-i18n="eyebrow">리더십 원칙</p>
+    <h1 data-i18n="heroTitle">내가 <em>이끄는</em> 방식</h1>
+    <p class="lede" data-i18n="heroSub">결정이 어려울 때 다시 펴 보는 열다섯 개의 기준. 매일 하나씩, 결정 앞에서 다시 읽는다.</p>
+    <div class="meta">
+      <span><b>15</b><span data-i18n="metaPrinciples">개의 원칙</span></span>
+      <span><span class="dot"></span><span data-i18n="metaUse">읽기 위한 것이 아니라, 지키기 위한 것</span></span>
+    </div>
+  </section>
+
+  <section class="today wrap">
+    <article class="today-card reveal" id="todayCard"></article>
+  </section>
+
+  <section class="wrap" id="principles" aria-label="원칙 목록">
+    <div class="list-head">
+      <h2><span data-i18n="listTitle">열다섯 개의 기준</span> <span class="count">15</span></h2>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchInput" type="search" autocomplete="off" aria-label="원칙 검색" placeholder="원칙 검색" />
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">
+      <h3 data-i18n="emptyTitle">일치하는 원칙이 없습니다</h3>
+      <p data-i18n="emptyBody">다른 단어로 검색해 보세요.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap f-in">
+      <p class="creed" data-i18n="footerCreed">읽기 위한 것이 아니라, 지키기 위한 것.</p>
+      <p class="note"><span data-i18n="footerNote">매일 하나씩, 결정 앞에서 다시.</span><br /><span id="updated"></span></p>
+    </div>
+  </footer>
+</main>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="d-in">
+    <div class="d-top">
+      <span class="d-num" id="dNum"></span>
+      <button class="d-close" id="dClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <h2 class="d-title" id="dTitle"></h2>
+    <p class="d-en" id="dEn"></p>
+    <p class="d-body" id="dBody"></p>
+    <div class="d-practice">
+      <p class="lbl" id="dPracticeLbl">이렇게 실천한다</p>
+      <ul id="dPractice"></ul>
+    </div>
+    <div class="d-nav">
+      <button id="dPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span id="dPrevLbl">이전</span></button>
+      <button class="nx" id="dNext"><span id="dNextLbl">다음</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const PRINCIPLES = [
+  { ko:{t:"고객을 감동시킨다", e:"모든 결정의 처음과 끝에 사람을 둔다.",
+        b:"나는 편리함을 만드는 데서 멈추지 않는다. 기대를 넘어선 경험, 곧 감동을 만든다. 내가 내리는 모든 판단의 시작과 끝에는 그 일을 받는 사람이 있다.",
+        p:["결정 전 한 번 묻는다. 이건 누구의 삶을 더 낫게 하는가.","'충분히 편리한가'가 아니라 '감동적인가'로 기준을 잡는다."]},
+    en:{t:"Wow the Customer", e:"Every decision begins and ends with the person I serve.",
+        b:"I don't stop at convenience. I aim for the moment that exceeds expectation. The person on the receiving end is the first and last thing I weigh in any call.",
+        p:["Before deciding, ask once: whose life does this make better?","Set the bar at remarkable, not at convenient enough."]} },
+
+  { ko:{t:"냉정하게 우선순위를 정한다", e:"반드시 이길 하나를 위해 나머지를 내려놓는다.",
+        b:"모든 것을 다 잘하려는 욕심은 아무것도 끝내지 못하게 한다. 반드시 이겨야 할 단 하나의 싸움을 고르고, 그것을 위해 다른 것을 포기할 용기를 낸다.",
+        p:["할 일 목록에서 '지금 안 해도 되는 것'을 먼저 지운다.","가장 불편하지만 중요한 일을 맨 위에 올린다."]},
+    en:{t:"Ruthless Prioritization", e:"Win the one fight that matters by letting the rest go.",
+        b:"Trying to do everything finishes nothing. I pick the single fight I must win, and I find the courage to drop the rest for it.",
+        p:["Cross off what can wait before adding what is new.","Put the hard, important thing at the top, not the easy one."]} },
+
+  { ko:{t:"전체의 관점으로 본다", e:"주인처럼 생각하고 전체의 이익을 우선한다.",
+        b:"나는 내 몫의 경계 안에만 머무르지 않는다. 주인의 시선으로 전체를 보고, '그건 내 일이 아니다'라는 말 대신 전체에 가장 이로운 선택을 한다.",
+        p:["'내 일이 아니다'가 떠오르면, 그 일이 전체에 미치는 영향을 먼저 본다.","내 부분이 최적이어도 전체가 손해면 다시 설계한다."]},
+    en:{t:"Whole-System Perspective", e:"Think like an owner; choose the whole over the part.",
+        b:"I don't stay inside the lines of my own patch. I look at the whole the way an owner would, and I never say not my job.",
+        p:["When not my job surfaces, look at the cost to the whole first.","If my part wins but the whole loses, redesign it."]} },
+
+  { ko:{t:"깊이 파고든다", e:"완전히 이해할 때까지 디테일을 놓지 않는다.",
+        b:"표면의 설명에 만족하지 않는다. 이상한 신호를 발견하면 근본 원인에 닿을 때까지 파고들고, 숫자와 현장을 직접 확인한다.",
+        p:["보고받은 숫자는 한 단계 더 들어가 직접 확인한다.","'왜'를 다섯 번 물어 근본 원인까지 내려간다."]},
+    en:{t:"Dive Deep", e:"Stay with the detail until I truly understand it.",
+        b:"I'm not satisfied by a surface explanation. When something looks off, I dig until I reach the root, and I check the numbers and the floor myself.",
+        p:["Verify reported numbers one level deeper, myself.","Ask why five times, down to the root cause."]} },
+
+  { ko:{t:"시스템으로 사고한다", e:"같은 결함이 반복되지 않을 구조를 만든다.",
+        b:"한 번의 해결로 끝내지 않는다. 규모가 커져도 견디는 프로세스를 설계하고, 빠른 피드백으로 같은 실수가 두 번 일어나지 않게 만든다.",
+        p:["문제를 고칠 때 '이 부류 전체'를 막을 방법을 함께 만든다.","반복되는 수작업은 구조로 바꾼다."]},
+    en:{t:"Think Systematically", e:"Build the structure that stops the same flaw twice.",
+        b:"A one-time fix isn't enough. I design processes that hold as scale grows, with feedback fast enough that the same mistake can't happen twice.",
+        p:["When fixing one bug, prevent the whole class of it.","Turn repeated manual work into structure."]} },
+
+  { ko:{t:"단순하게 만든다", e:"복잡함은 속도와 경험의 적이다.",
+        b:"복잡함은 규모와 속도, 그리고 경험을 망친다. 나는 더 더할 것이 아니라 덜어낼 것을 먼저 찾고, 집요하게 단순하게 만든다.",
+        p:["새 기능을 더하기 전에 뺄 것을 먼저 찾는다.","설명이 길어지면 설계가 복잡한 것이다. 다시 줄인다."]},
+    en:{t:"Simplify", e:"Complexity is the enemy of speed and experience.",
+        b:"Complexity erodes scale, speed, and experience. I look for what to remove before what to add, and I simplify relentlessly.",
+        p:["Find something to remove before adding anything.","If it takes long to explain, the design is too complex. Cut it."]} },
+
+  { ko:{t:"반대하되, 결정엔 헌신한다", e:"다르게 말하되, 정해지면 전력을 다한다.",
+        b:"침묵으로 동의를 가장하지 않는다. 결정 전에는 솔직하게 이견을 밝히고, 일단 결정되면 내 의견이 아니었더라도 성공을 위해 모든 역량을 쏟는다.",
+        p:["회의에서 불편한 반대를 미루지 않고 그 자리에서 말한다.","결정된 뒤에는 '나는 반대했다'를 핑계로 쓰지 않는다."]},
+    en:{t:"Disagree and Commit", e:"Speak the disagreement; then commit fully to the call.",
+        b:"I don't fake agreement by staying quiet. I voice the disagreement before the decision, and once it's made, even if it wasn't my choice, I give it everything.",
+        p:["Raise the uncomfortable objection in the room, not after.","Once decided, never use I was against it as an excuse."]} },
+
+  { ko:{t:"최고를 알아보고 키운다", e:"사람에 투자해 일의 수준을 끌어올린다.",
+        b:"함께하는 사람의 수준이 곧 결과의 수준이다. 나는 채용과 위임에서 기준을 높게 잡고, 사람들이 잠재력을 다 펼치도록 돕는 데 시간을 쓴다.",
+        p:["나보다 특정 분야에서 나은 사람을 뽑는 것을 두려워하지 않는다.","매주 한 사람의 성장을 위한 시간을 따로 둔다."]},
+    en:{t:"Hire and Develop the Best", e:"Raise the bar by investing in people.",
+        b:"The level of the people around me sets the level of the work. I keep the bar high in who I bring in and trust, and I spend real time helping them reach their potential.",
+        p:["Don't fear hiring people better than me at their craft.","Reserve weekly time for one person's growth."]} },
+
+  { ko:{t:"끈기로 결과를 만든다", e:"제때, 높은 기준으로 끝까지 해낸다.",
+        b:"시작은 누구나 한다. 나는 제때, 약속한 수준으로 결과를 낸다. 오래 일한 것과 해낸 것을 혼동하지 않고, 시작한 일은 반드시 끝맺는다.",
+        p:["'바빴다'가 아니라 '끝냈다'로 한 주를 평가한다.","장애물이 생기면 변명 대신 우회로를 찾는다."]},
+    en:{t:"Deliver Results with Grit", e:"Finish, on time and to a high bar.",
+        b:"Anyone can start. I deliver on time and at the standard I promised. I don't confuse hours spent with results, and I finish what I begin.",
+        p:["Judge the week by what shipped, not how busy it was.","When blocked, find the way around, not the reason why not."]} },
+
+  { ko:{t:"권한 없이 설득한다", e:"지위가 아니라 근거가 사람을 움직이게 한다.",
+        b:"직책으로 누르지 않는다. 데이터와 통찰로 설득하고, 지위가 아니라 더 나은 논리가 권위가 되는 환경을 만든다.",
+        p:["주장할 때 '내 직책'이 아니라 '내 근거'를 앞세운다.","더 좋은 논리를 만나면 내 의견을 바꾼다."]},
+    en:{t:"Influence without Authority", e:"Let evidence, not position, move people.",
+        b:"I don't lean on title to win. I persuade with data and insight, building a room where the better argument carries the weight, not the rank.",
+        p:["Lead with the evidence, not the role.","Change my mind when the better argument shows up."]} },
+
+  { ko:{t:"높이 겨누고 길을 찾는다", e:"절충 대신 근본 해법을, 높은 목표가 큰 결과를 만든다.",
+        b:"손쉬운 절충안에 안주하지 않는다. 비현실적으로 보이는 목표가 평범한 길로는 닿을 수 없는 해법을 만들어낸다고 믿고, 그 길을 찾는다.",
+        p:["'이 정도면 됐다' 앞에서 한 번 더 높은 기준을 떠올린다.","불가능해 보이면 목표를 낮추기 전에 방법을 다시 묻는다."]},
+    en:{t:"Aim High and Find a Way", e:"Aim past the compromise; high targets force real answers.",
+        b:"I don't settle for the easy compromise. I believe a target that looks unreasonable forces answers the ordinary path never reaches, and I go find them.",
+        p:["At good enough, reach for the higher bar once more.","If it looks impossible, question the method before lowering the goal."]} },
+
+  { ko:{t:"탐욕스럽게 배운다", e:"더 나은 답을 위해 자존심을 내려놓는다.",
+        b:"내가 틀릴 수 있음을 전제로 산다. 더 좋은 아이디어 앞에서 자존심을 내려놓고, 실수를 합리화하는 대신 그것에서 배운다.",
+        p:["비판을 들으면 방어 대신 '무엇이 맞을까'를 먼저 본다.","실수는 숨기지 않고 기록해 다음에 쓴다."]},
+    en:{t:"Learn Voraciously", e:"Drop the ego for the better idea.",
+        b:"I live assuming I might be wrong. I set ego aside for a better idea, and I learn from mistakes instead of explaining them away.",
+        p:["Meet criticism by asking what is true in it, not by defending.","Record mistakes instead of hiding them, and reuse the lesson."]} },
+
+  { ko:{t:"탁월함을 요구한다", e:"'괜찮은 수준'에 멈추지 않는다.",
+        b:"평범함을 거부한다. 어제의 최고 기준을 오늘의 기본으로 삼고, 나 자신과 결과물에 대해 기준을 끊임없이 높인다.",
+        p:["결과물을 내기 전 '이게 내 최고인가'를 한 번 묻는다.","한 번 도달한 기준은 다음의 출발선으로 삼는다."]},
+    en:{t:"Demand Excellence", e:"Never settle for fine.",
+        b:"I refuse the ordinary. Yesterday's best becomes today's baseline, and I keep raising the bar for myself and the work.",
+        p:["Before shipping, ask: is this my best?","Treat the bar I just cleared as the next starting line."]} },
+
+  { ko:{t:"긴박하게 움직인다", e:"긴박함을 위기의식으로 삼아 미루지 않는다.",
+        b:"완벽한 정보를 기다리다 때를 놓치지 않는다. 계산된 위험을 떠안고 빠르게 움직이며, 실행하는 과정에서 배운다.",
+        p:["'나중에'라고 미룬 일에 가장 먼저 손을 댄다.","80%의 확신이면 움직이고, 나머지는 실행하며 채운다."]},
+    en:{t:"Move with Urgency", e:"Treat urgency as instinct; don't defer.",
+        b:"I don't wait for perfect information and miss the moment. I take calculated risks, move fast, and learn in the doing.",
+        p:["Start with the thing I keep deferring to later.","Move at 80 percent certainty; fill the rest in motion."]} },
+
+  { ko:{t:"낭비를 미워한다", e:"적은 것으로 더 많은 것을 해낸다.",
+        b:"자원이 많아서가 아니라 적어서 더 창의적이 된다고 믿는다. 단순히 줄이는 것이 아니라, 무엇이 진짜 가치를 만드는지 근본부터 다시 묻는다.",
+        p:["돈이나 시간을 쓰기 전에 '이게 가치를 만드는가'를 묻는다.","익숙한 비용을 당연하게 두지 않고 매번 다시 따진다."]},
+    en:{t:"Be Frugal", e:"Do more with less.",
+        b:"I believe constraint breeds creativity, not abundance. I don't just cut; I ask from the ground up what actually creates value.",
+        p:["Before spending money or time, ask if it creates value.","Don't treat a familiar cost as fixed; re-examine it each time."]} },
+];
+
+const I18N = {
+  ko:{ skip:"본문 바로가기", tag:"내가 따르는 원칙", eyebrow:"리더십 원칙",
+    heroTitle:'내가 <em>이끄는</em> 방식',
+    heroSub:"결정이 어려울 때 다시 펴 보는 열다섯 개의 기준. 매일 하나씩, 결정 앞에서 다시 읽는다.",
+    metaPrinciples:"개의 원칙", metaUse:"읽기 위한 것이 아니라, 지키기 위한 것",
+    listTitle:"열다섯 개의 기준", todayKicker:"오늘의 원칙", read:"자세히 보기",
+    searchPlaceholder:"원칙 검색 (제목, 내용)", practiceLbl:"이렇게 실천한다",
+    prev:"이전", next:"다음", emptyTitle:"일치하는 원칙이 없습니다", emptyBody:"다른 단어로 검색해 보세요.",
+    footerCreed:"읽기 위한 것이 아니라, 지키기 위한 것.", footerNote:"매일 하나씩, 결정 앞에서 다시.",
+    langLabel:"EN", searchAria:"원칙 검색", updated:"갱신" },
+  en:{ skip:"Skip to content", tag:"Principles I Lead By", eyebrow:"Leadership Principles",
+    heroTitle:'How I <em>Lead</em>',
+    heroSub:"Fifteen standards I return to when a decision is hard. One a day, and read again before deciding.",
+    metaPrinciples:"principles", metaUse:"Not made to be read, but to be kept",
+    listTitle:"The Fifteen", todayKicker:"Principle of the Day", read:"Read in full",
+    searchPlaceholder:"Search principles (title, text)", practiceLbl:"How I live it",
+    prev:"Prev", next:"Next", emptyTitle:"No matching principle", emptyBody:"Try a different word.",
+    footerCreed:"Not made to be read, but to be kept.", footerNote:"One a day, and again before every decision.",
+    langLabel:"한국어", searchAria:"Search principles", updated:"Updated" }
+};
+
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+const pad = n => String(n+1).padStart(2,"0");
+
+const state = {
+  lang: localStorage.getItem("lp-lang") || ((navigator.language||"ko").toLowerCase().startsWith("ko") ? "ko" : "en"),
+  current: 0,
+};
+const urlLang = new URLSearchParams(location.search).get("lang");
+if(urlLang==="ko"||urlLang==="en") state.lang = urlLang;
+
+function dayIndex(){
+  const now = new Date();
+  const start = new Date(now.getFullYear(),0,0);
+  const diff = now - start;
+  const day = Math.floor(diff / 86400000);
+  return day % PRINCIPLES.length;
+}
+
+function setTheme(t){
+  document.documentElement.setAttribute("data-theme", t);
+  localStorage.setItem("lp-theme", t);
+  $("#sunIcon").style.display = t==="dark" ? "none":"block";
+  $("#moonIcon").style.display = t==="dark" ? "block":"none";
+}
+
+function renderToday(){
+  const i = dayIndex();
+  const d = PRINCIPLES[i][state.lang];
+  const L = I18N[state.lang];
+  $("#todayCard").innerHTML = `
+    <div class="today-num">${pad(i)}</div>
+    <div class="today-body">
+      <p class="kicker"><span class="dot"></span>${L.todayKicker}</p>
+      <h2>${d.t}</h2>
+      <p class="en">${PRINCIPLES[i][state.lang==="ko"?"en":"ko"].t}</p>
+      <p>${d.b}</p>
+      <button class="read" data-open="${i}">${L.read}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>`;
+}
+
+function cardHTML(p,i){
+  const d = p[state.lang];
+  return `<button class="card reveal" data-open="${i}" aria-label="${d.t}">
+    <div class="row"><span class="n">${pad(i)}</span><h3>${d.t}</h3></div>
+    <p class="en">${p[state.lang==="ko"?"en":"ko"].t}</p>
+    <p>${d.e}</p>
+    <span class="more">${I18N[state.lang].read}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </span>
+  </button>`;
+}
+
+function renderGrid(filter=""){
+  const q = filter.trim().toLowerCase();
+  const grid = $("#grid");
+  let shown = 0;
+  grid.innerHTML = PRINCIPLES.map((p,i)=>{
+    const hay = [p.ko.t,p.ko.e,p.ko.b,p.en.t,p.en.e,p.en.b].join(" ").toLowerCase();
+    if(q && !hay.includes(q)) return "";
+    shown++;
+    return cardHTML(p,i);
+  }).join("");
+  $("#empty").classList.toggle("show", shown===0);
+  observeReveals();
+}
+
+function applyI18n(){
+  const L = I18N[state.lang];
+  document.documentElement.lang = state.lang;
+  $$("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(L[k]!==undefined) el.innerHTML = L[k];
+  });
+  $("#langNow").textContent = L.langLabel;
+  $("#langBtn").setAttribute("aria-label", state.lang==="ko" ? "Switch to English" : "한국어로 전환");
+  const si = $("#searchInput");
+  si.placeholder = L.searchPlaceholder;
+  si.setAttribute("aria-label", L.searchAria);
+  $("#dPracticeLbl").textContent = L.practiceLbl;
+  $("#dPrevLbl").textContent = L.prev;
+  $("#dNextLbl").textContent = L.next;
+  const dt = new Date();
+  $("#updated").textContent = `${L.updated}: ` + dt.toLocaleDateString(state.lang==="ko"?"ko-KR":"en-US",{year:"numeric",month:"long",day:"numeric"});
+}
+
+let io;
+function observeReveals(){
+  if(io) io.disconnect();
+  const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const items = $$(".reveal:not(.in)");
+  if(reduce){ items.forEach(el=>el.classList.add("in")); return; }
+  io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+  items.forEach(el=>io.observe(el));
+}
+
+const dlg = $("#detail");
+function openDetail(i){
+  state.current = i;
+  const p = PRINCIPLES[i];
+  const d = p[state.lang];
+  $("#dNum").textContent = pad(i);
+  $("#dTitle").textContent = d.t;
+  $("#dEn").textContent = p[state.lang==="ko"?"en":"ko"].t;
+  $("#dBody").textContent = d.b;
+  $("#dPractice").innerHTML = d.p.map(x=>`<li>${x}</li>`).join("");
+  if(!dlg.open) dlg.showModal();
+}
+function step(delta){ openDetail((state.current+delta+PRINCIPLES.length)%PRINCIPLES.length); }
+
+// events
+$("#themeBtn").addEventListener("click",()=> setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark"));
+$("#langBtn").addEventListener("click",()=>{
+  state.lang = state.lang==="ko" ? "en":"ko";
+  localStorage.setItem("lp-lang",state.lang);
+  applyI18n(); renderToday(); renderGrid($("#searchInput").value);
+  if(dlg.open) openDetail(state.current);
+});
+$("#searchBtn").addEventListener("click",()=>{
+  document.getElementById("principles").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
+  setTimeout(()=>$("#searchInput").focus(),420);
+});
+$("#searchInput").addEventListener("input",e=>renderGrid(e.target.value));
+document.addEventListener("click",e=>{
+  const t = e.target.closest("[data-open]");
+  if(t) openDetail(Number(t.getAttribute("data-open")));
+});
+$("#dClose").addEventListener("click",()=>dlg.close());
+$("#dPrev").addEventListener("click",()=>step(-1));
+$("#dNext").addEventListener("click",()=>step(1));
+dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
+document.addEventListener("keydown",e=>{
+  if(!dlg.open) return;
+  if(e.key==="ArrowLeft") step(-1);
+  else if(e.key==="ArrowRight") step(1);
+});
+
+// init
+setTheme(localStorage.getItem("lp-theme") || (matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"));
+applyI18n();
+renderToday();
+renderGrid();
+observeReveals();
+</script>
+</body>
+</html>

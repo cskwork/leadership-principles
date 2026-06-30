@@ -1,0 +1,5 @@
+.superdesign/
+.playwright-cli/
+.DS_Store
+node_modules/
+*.log
